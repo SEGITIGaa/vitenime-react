@@ -28,7 +28,7 @@ const Episodes = ({ anime, className, slug }) => {
           </Link>
         ))}
       </div>
-      <div className="h-10 bg-gradient-to-t from-black to-transparent bottom-0 w-full absolute"></div>
+      <div className="h-10 bg-gradient-to-t from-black to-transparent -bottom-1 w-full absolute"></div>
     </div>
   );
 };

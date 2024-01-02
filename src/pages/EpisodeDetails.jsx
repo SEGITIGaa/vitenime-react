@@ -46,7 +46,7 @@ const EpisodeDetails = () => {
                 <iframe allowFullScreen={true} src={iframe} className="rounded-lg border border-dark-tosca md:h-96"></iframe>
                 <h3 className='text-white font-medium text-lg'>{episode.judul}</h3>
             </div>
-            <div onClick={() => HandleShowedEpisode()} className="text-dark-tosca bg-neutral-950 rounded px-4 py-2 md:hidden ">lihat episode lainnya</div>
+            <div onClick={() => HandleShowedEpisode()} className="text-dark-tosca bg-neutral-900 rounded px-4 py-2 md:hidden ">lihat episode lainnya</div>
             {showEpisode == true && (
               <Episodes anime={anime} slug={animeSlug} className={"relative h-max md:w-1/4"}/>
             )}

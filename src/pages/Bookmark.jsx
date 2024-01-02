@@ -11,7 +11,7 @@ const Bookmark = () => {
   }, []);
 
   return (
-    <Layouts name={"Bookmark saya"} useNavbar={false}>
+    <Layouts name={"Daftar tontonan saya"} useNavbar={false}>
       <div className="isc">
         {bookmarkedAnimes.map((anime, index) => (
           <Link to={`/anime/${anime.slug}`} className="column gap-3" key={index}>

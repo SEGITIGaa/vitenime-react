@@ -10,11 +10,11 @@ const DownloadLink = ({download, episode}) => {
             episode.download[type].length > 0 && (
               <div
                 key={index}
-                className="flex flex-col md:flex-row  md:items-center gap-3 bg-neutral-950 px-3 py-2"
+                className="flex flex-col md:flex-row  md:items-center gap-3 bg-neutral-900 px-3 py-2"
               >
                 <h1 className="resolution">
                   {`${type.split("p")[0].replace("d", " ")}P `}
-                  <span className="resolution text-xs inline-flex text-light-tosca/30">
+                  <span className="resolution text-xs inline-flex text-dark-tosca">
                     {type.includes("mp4") ? "MP4" : "MKV"}
                   </span>
                 </h1>

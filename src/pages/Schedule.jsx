@@ -33,7 +33,7 @@ const Schedule = () => {
                   <Link
                     key={index}
                     to={`/anime/${anime.slug}`}
-                    className="text-light-tosca/70 text-sm bg-neutral-950/50 rounded-lg hover:scale-105 hover:text-light-tosca px-3 py-2 ml-6 w-3/4 md:w-1/2 transition-all duration-300"
+                    className="text-light-tosca/70 text-sm bg-neutral-900 rounded-lg hover:scale-105 hover:text-light-tosca px-3 py-2 ml-6 w-3/4 md:w-1/2 transition-all duration-300"
                   >
                     {anime.judul}
                   </Link>
