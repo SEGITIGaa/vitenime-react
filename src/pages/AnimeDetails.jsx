@@ -29,7 +29,6 @@ const AnimeDetails = () => {
   function checkBookmarkStatus() {
     const bookmarkedAnimes =
       JSON.parse(localStorage.getItem("bookmarkedAnimes")) || [];
-    console.log(bookmarkedAnimes);
     const isAnimeBookmarked = bookmarkedAnimes.some(
       (bookmark) => bookmark.slug === animeSlug
     );

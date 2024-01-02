@@ -28,7 +28,7 @@
     @apply relative transition-all duration-300 hover:scale-105 rounded-lg overflow-hidden;
   }
   .card-img {
-    @apply rounded-lg md:h-72 w-52;
+    @apply rounded-lg md:h-72 h-56 object-cover w-52;
   }
   .card-sub {
     @apply text-light-tosca/60 font-medium text-sm;

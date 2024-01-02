@@ -2,10 +2,8 @@ import { Layouts, React, Link, useEffect, useState } from "../exporter";
 
 const Bookmark = () => {
   const [bookmarkedAnimes, setBookmarkedAnimes] = useState([]);
-  console.log(bookmarkedAnimes);
 
   useEffect(() => {
-    // Ambil data bookmark dari localStorage
     const storedBookmarks = JSON.parse(localStorage.getItem("bookmarkedAnimes")) || [];
     setBookmarkedAnimes(storedBookmarks);
   }, []);

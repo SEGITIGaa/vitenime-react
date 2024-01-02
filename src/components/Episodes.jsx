@@ -1,17 +1,36 @@
-import { Link, useLocation } from "../exporter";
+import { Link, useEffect, useLocation, useParams, useState } from "../exporter";
+import axios from "axios"; // Import axios library
 
-const Episodes = ({ anime, className, slug }) => {
+const Episodes = ({ className }) => {
   const location = useLocation();
+  const { anime: animeSlug } = useParams();
+  const [anime, setAnime] = useState({ episodes: [] }); // Initialize with an empty object
+
+  useEffect(() => {
+    const getAnime = async () => {
+      try {
+        const response = await axios.get(
+          `https://animepi.aimanfadillah.repl.co/anime/${animeSlug}`
+        );
+        setAnime(response.data);
+      } catch (error) {
+        console.error("Error fetching anime:", error);
+        // Handle error (e.g., setAnime with a default value or show an error message)
+      }
+    };
+
+    getAnime();
+  }, [animeSlug]); // Adjust the dependency array
 
   return (
     <div className={className}>
       <div className="flex flex-col gap-2 max-h-96 overflow-y-scroll w-full relative pb-10">
         {anime.episodes.map((episode, index) => (
           <Link
-            to={`/anime/${slug}/episode/${episode.slug}`}
+            to={`/anime/${animeSlug}/episode/${episode.slug}`}
             key={index}
             className={`episode ${
-              location.pathname === `/anime/${slug}/episode/${episode.slug}`
+              location.pathname === `/anime/${animeSlug}/episode/${episode.slug}`
                 ? 'bg-dark-tosca'
                 : ''
             }`}
