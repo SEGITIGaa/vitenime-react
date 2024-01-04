@@ -22,7 +22,7 @@ const AnimeDetails = () => {
 
   async function getAnime() {
     const response = await axios.get(
-      `https://animepi.aimanfadillah.repl.co/anime/${animeSlug}`
+      `https://animepi.glitch.me/anime/${animeSlug}`
     );
     setAnime(response.data);
   }

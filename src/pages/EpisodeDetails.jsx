@@ -14,12 +14,12 @@ const EpisodeDetails = () => {
   }, [episodeSlug]);
 
   async function getNonce() {
-    const response = await axios.get("https://animepi.aimanfadillah.repl.co/nonce");
+    const response = await axios.get("https://animepi.glitch.me/nonce");
     setNonce(response.data);
   }
 
   async function getEpisode() {
-    const response = await axios.get(`https://animepi.aimanfadillah.repl.co/episode/${episodeSlug}`);
+    const response = await axios.get(`https://animepi.glitch.me/episode/${episodeSlug}`);
     setEpisode(response.data);
     setIframe(response.data.iframe);
   }

@@ -7,7 +7,7 @@ import {
   Loader,
 } from "../exporter";
 
-const API_URL = "https://animepi.aimanfadillah.repl.co";
+const API_URL = "https://animepi.glitch.me";
 
 const Batch = () => {
   const [lengkap, setLengkap] = useState([]);

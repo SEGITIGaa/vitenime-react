@@ -1,4 +1,4 @@
-import { axios, Link, useParams, useEffect, useState } from "../exporter";
+import { Link } from "../exporter";
 
 const BatchDownload = ({anime, animeSlug}) => {
 

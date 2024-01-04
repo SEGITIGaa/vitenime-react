@@ -15,7 +15,7 @@ const Schedule = () => {
   }, []);
   async function getJadwal() {
     const response = await axios.get(
-      "https://animepi.aimanfadillah.repl.co/jadwal"
+      "https://animepi.glitch.me/jadwal"
     );
     setJadwal(response.data);
   }

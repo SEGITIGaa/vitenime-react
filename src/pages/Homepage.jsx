@@ -14,7 +14,7 @@ const Homepage = () => {
 
   async function getAnimes(reset = false, query = state.request) {
     const page = reset ? 1 : state.page;
-    const response = await axios.get(`https://animepi.aimanfadillah.repl.co/anime?page=${page}&${query}`);
+    const response = await axios.get(`https://animepi.glitch.me/anime?page=${page}&${query}`);
     const newAnimes = reset ? response.data : [...state.animes, ...response.data];
     const hasMore = response.data.length > 0;
 

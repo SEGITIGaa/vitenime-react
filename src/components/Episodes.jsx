@@ -8,7 +8,7 @@ const Episodes = ({ className }) => {
     const getAnime = async () => {
       try {
         const response = await axios.get(
-          `https://animepi.aimanfadillah.repl.co/anime/${animeSlug}`
+          `https://animepi.glitch.me/anime/${animeSlug}`
         );
         setAnime(response.data);
       } catch (error) {
