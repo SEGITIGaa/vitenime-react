@@ -24,17 +24,18 @@ import Sidebar from "./components/Sidebar.jsx";
 import Episodes from "./components/Episodes.jsx";
 import StreamServices from "./components/StreamServices.jsx";
 import DownloadLink from "./components/DownloadLink.jsx";
+import BatchDownload from "./components/BatchDownload.jsx";
 
 // pages
 import Homepage from "./pages/Homepage";
 import AnimeDetails from "./pages/AnimeDetails.jsx";
 import EpisodeDetails from "./pages/EpisodeDetails";
 import CompleteAnimes from "./pages/CompleteAnimes.jsx";
-import OngoingAnime from "./pages/OngoingAnime.jsx";
 import Genres from "./pages/Genres.jsx";
 import Schedule from "./pages/Schedule.jsx";
 import AnimeWithGenre from "./pages/AnimeWithGenre.jsx";
 import Bookmark from "./pages/Bookmark.jsx";
+import Batch from "./pages/Batch.jsx";
 
 export {
   Route,
@@ -49,13 +50,14 @@ export {
   axios,
   Layouts,
   Loader,
+  Batch,
   Schedule,
   Bookmark,
   Homepage,
   AnimeDetails,
   EpisodeDetails,
+  BatchDownload,
   CompleteAnimes,
-  OngoingAnime,
   AnimeWithGenre,
   Genres,
   App,

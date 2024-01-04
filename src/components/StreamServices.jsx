@@ -1,4 +1,4 @@
-
+import {axios} from "../exporter"
 
 const StreamServices = ({episode, nonce, setIframe}) => {
     async function getIframe (content) {
@@ -7,7 +7,7 @@ const StreamServices = ({episode, nonce, setIframe}) => {
         setIframe(inframeSrc);
     }
   return (
-    <select onChange={(e) => getIframe(e.target.value)} className="nav-button outline-none px-2 w-full md:w-1/3">
+    <select onChange={(e) => getIframe(e.target.value)} className="nav-button bg-dark text-light-tosca font-semibold outline-none px-2 w-full md:w-1/3">
     {episode.mirror.m360p.map((dt,index) => 
         <option key={index} value={dt.content} className='opt'>layanan streaming : {dt.nama} 360P</option>
     )}

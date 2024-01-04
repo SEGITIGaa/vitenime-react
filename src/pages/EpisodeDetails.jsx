@@ -1,4 +1,4 @@
-import { Layouts, React, axios, useEffect, useState, useParams, StreamServices, DownloadLink, Episodes } from '../exporter';
+import { Layouts, React, axios, useEffect, useState, useParams, StreamServices, DownloadLink, Episodes, Loader } from '../exporter';
 
 const EpisodeDetails = () => {
   const [episode, setEpisode] = useState();
@@ -35,20 +35,26 @@ const EpisodeDetails = () => {
           <div className="flex flex-col md:flex-row gap-4 md:gap-0 md:items-center justify-between">
             <div className="flex flex-col gap-3 w-full md:w-2/3">
               <StreamServices episode={episode} nonce={nonce} setIframe={setIframe} />
-              <iframe allowFullScreen={true} src={iframe} className="rounded-lg border border-dark-tosca md:h-96"></iframe>
-              <h3 className='text-white font-medium text-lg'>{episode.judul}</h3>
+              <iframe allowFullScreen={true} src={iframe} className="episode-frame"></iframe>
+              <h3 className='episodes-title'>{episode.judul}</h3>
             </div>
-            <div onClick={() => HandleShowedEpisode()} className="text-dark-tosca bg-neutral-900 rounded px-4 py-2 md:hidden">lihat episode lainnya</div>
+            <div onClick={() => HandleShowedEpisode()} className="text-dark font-semibold flex items-center justify-between bg-semidark-tosca rounded px-4 py-2 md:hidden">
+              {showEpisode === true ?'sembunyikan episode lainnya':'lihat episode lainnya'}
+              <img src="/Expand.svg" alt="" className={showEpisode === true ?'w-5 h-5 -rotate-180':'w-5 h-5'}/>
+            </div>
             {showEpisode === true && (
-              <div className="md:w-1/4">
-                <Episodes className="relative h-max md:flex" />
-              </div>
+                <Episodes className="relative h-max" />
             )}
+            <div className="md:w-1/4">
+                <Episodes className="relative h-max hidden md:flex" />
+              </div>
           </div>
-          <div className="icon-button w-2/3 h-1 p-0.5 bg-neutral-950"></div>
+          <div className="icon-button md:w-2/3 h-1 p-0.5 bg-neutral-950"></div>
           <DownloadLink episode={episode} download={download} />
         </>
-      ) : null}
+      ) : (
+        <Loader />
+      )}
     </Layouts>
   );
 };

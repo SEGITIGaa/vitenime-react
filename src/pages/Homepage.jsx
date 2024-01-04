@@ -27,7 +27,7 @@ const Homepage = () => {
   }
 
   return (
-    <Layouts name={'Kumpulan anime'} getAnimes={getAnimes} setRequest={(request) => setState({ ...state, request })}>
+    <Layouts name={'Sedang berlangsung'} getAnimes={getAnimes} setRequest={(request) => setState({ ...state, request })}>
       <InfiniteScroll
         className="isc"
         hasMore={state.hasMore}

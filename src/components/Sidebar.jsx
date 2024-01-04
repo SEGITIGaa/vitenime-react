@@ -3,27 +3,27 @@ import { Link } from "../exporter";
 const Sidebar = () => {
   const sidebarMenu = [
     {
-      icon: "/ongoing.svg",
-      path:"/ongoing"
+      icon: "/watchList.svg",
+      path: "/bookmark",
+      name: "Daftar tontonan",
     },
     {
       icon: "/completed.svg",
-      path:"/completed"
+      path:"/completed",
+      name:"Rilis penuh"
     },
-    {
-      icon: "/watchList.svg",
-      path: "/bookmark",
-    },
+   
   ];
   return (
-    <div className="flex md:column gap-5 md:fixed top-32 left-5">
-      <Link to={"/"} className="icon-button">
+    <div className="flex gap-1 md:column md:gap-5 md:fixed top-32 left-5 w-full md:w-max">
+      <Link to={"/"} className="icon-button w-1/4 md:w-12">
         <img src="/HomePage.svg" alt="Homepage" />
       </Link>
-      <div className="icon-button h-1 p-0 bg-dark-tosca/50 hidden md:inline-block"></div>
+      <div className="icon-button h-1 bg-dark-tosca/50 hidden md:inline-block"></div>
       {sidebarMenu.map((ele, i) => (
         <Link to={ele.path} key={i} className="icon-button">
-          <img src={ele.icon} alt="Homepage" />
+          <img src={ele.icon} alt={ele.name} className="icon"/>
+          <p className="text-sm font-bold w-2/3 md:hidden">{ele.name}</p>
         </Link>
       ))}
     </div>

@@ -1,8 +1,6 @@
 const Loader = () => (
-    <div className="row my-3">
-      <div className="col-md-12 d-flex justify-content-center mt-3">
-        <div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status"></div>
-      </div>
-    </div>
-  );
-  export default Loader
+  <div className="fixed inset-0 bg-neutral-600/20 flex items-center justify-center">
+    <h1 className="text-light-tosca font-semibold text-sm">Loading mas...</h1>
+  </div>
+);
+export default Loader;

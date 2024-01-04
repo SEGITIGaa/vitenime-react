@@ -7,6 +7,7 @@ import {
   Episodes,
   useState,
   Loader,
+  BatchDownload,
 } from "../exporter";
 
 const AnimeDetails = () => {
@@ -17,7 +18,7 @@ const AnimeDetails = () => {
   useEffect(() => {
     getAnime();
     checkBookmarkStatus();
-  }, []);
+  }, [animeSlug]);
 
   async function getAnime() {
     const response = await axios.get(
@@ -95,34 +96,28 @@ const AnimeDetails = () => {
       {anime ? (
         <div className="column gap-4 md:gap-14">
           <div className="flex w-full justify-between md:justify-normal md:gap-24">
-            <img
-              src={anime.gambar}
-              className="rounded-lg h-48 w-1/3 md:h-full md:w-52"
-              alt={anime.judul}
-            />
+            <img src={anime.gambar} className="anime-img" alt={anime.judul} />
             <div className="column gap-2 md:gap-4 w-3/4 pl-3 md:pl-0 md:w-2/3 justify-end pb-5">
               <h5 className="text-white font-medium text-xs">By {studio}</h5>
-              <h1 className="text-white-semibold text-lg md:text-3xl w-3/4">
-                {anime.judul}
-              </h1>
-              <h5 className="text-tosca-medium w-2/3">JP : {namaJapan}</h5>
-              <div className="flex items-center gap-3 mt-5 text-light-tosca/70 font-medium text-[8px] md:text-xs">
+              <h1 className="anime-title">{anime.judul}</h1>
+              <h5 className="anime-title-jp">JP : {namaJapan}</h5>
+              <div className="anime-info-container">
                 {rilis}
                 <span className="text-white-semibold">|</span>
                 {status}
                 <span className="text-white-semibold">|</span>
                 {skor}
               </div>
-              <div className="flex flex-col gap-2 md:flex-row md:items-center items-start justify-between">
+              <div className="anime-genre-container">
                 <h5 className="text-tosca-medium">{genre}</h5>
-                <button className="nav-button" onClick={handleBookmark}>
-                  {isBookmarked ? "hapus dari watchlist" : "simpan ke watchlist"}
+                <button className={isBookmarked ? "bookmarked" : "unbookmark"} onClick={handleBookmark}>
+                  {isBookmarked ? "Batalkan" : "Tonton nanti"}
                 </button>
               </div>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row w-full gap-10 md:gap-24">
-            <div className="column gap-2 w-52">
+          <div className="column md:flex-row w-full gap-10 md:gap-24">
+            <div className="column gap-2 md:w-52">
               {animeInformation.map((ele, i) => (
                 <p key={i} className="text-tosca-medium">
                   <span className="font-semibold tracking-widest">
@@ -132,11 +127,16 @@ const AnimeDetails = () => {
                 </p>
               ))}
             </div>
-            <Episodes
-              anime={anime}
-              slug={animeSlug}
-              className={"relative h-max md:w-2/3"}
-            />
+            <div className="column w-full md:w-2/3 gap-2">
+              {anime.lengkap.judul && (
+                <BatchDownload anime={anime} animeSlug={animeSlug} />
+              )}
+              <Episodes
+                anime={anime}
+                slug={animeSlug}
+                className={"relative h-max"}
+              />
+            </div>
           </div>
         </div>
       ) : (

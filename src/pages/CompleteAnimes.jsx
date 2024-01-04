@@ -21,7 +21,7 @@ const CompleteAnimes = () => {
   }, [state.page, state.request]);
 
   return (
-    <Layouts name={'Completed anime'} getAnimes={getCompletedAnimes} setRequest={(request) => setState({ ...state, request})}>
+    <Layouts name={'Anime siap tonton!!'} getAnimes={getCompletedAnimes} setRequest={(request) => setState({ ...state, request})}>
       <InfiniteScroll className="isc" hasMore={state.hasMore} next={getCompletedAnimes} dataLength={state.animes.length} loader={<Loader />}>
         {state.animes.map((anime, index) => (
           <Link to={`/anime/${anime.slug}`} className="column gap-3" key={index}>
