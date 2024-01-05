@@ -16,7 +16,7 @@ export default {
         "poppins" :"Poppins",
       },
       backgroundImage:{
-        "patern":"url(./Assets/pattern.svg)"
+        "patern":"url(/Assets/pattern.svg)"
       }
     },
   },
