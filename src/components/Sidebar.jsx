@@ -23,7 +23,7 @@ const Sidebar = () => {
       {sidebarMenu.map((ele, i) => (
         <Link to={ele.path} key={i} className="icon-button">
           <img src={ele.icon} alt={ele.name} className="icon md:h-max md:w-max"/>
-          <p className="text-sm font-bold w-2/3 md:hidden">{ele.name}</p>
+          <p className="text-xs font-bold w-2/3 md:hidden">{ele.name}</p>
         </Link>
       ))}
     </div>
