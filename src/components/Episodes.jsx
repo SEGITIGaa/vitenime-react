@@ -8,7 +8,7 @@ const Episodes = ({ className }) => {
     const getAnime = async () => {
       try {
         const response = await axios.get(
-          `https://animepi.glitch.me/anime/${animeSlug}`
+          `https://web-anime-psi.vercel.app/anime/${animeSlug}`
         );
         setAnime(response.data);
       } catch (error) {
@@ -32,7 +32,7 @@ const Episodes = ({ className }) => {
                 {episode.tanggal}
               </p>
             </div>
-            <img src="/arrow-black.svg" alt="" className="h-5" />
+            <img src="https://img.icons8.com/fluency-systems-filled/96/ffffff/sort-right.png" alt="" className="w-5 h-5" />
           </Link>
         ))}
       </div>

@@ -8,7 +8,7 @@ const Genres = () => {
 
   async function getGenres() {
     const response = await axios.get(
-      "https://animepi.glitch.me/genre"
+      "https://web-anime-psi.vercel.app/genre"
     );
     setGenres(response.data);
   }

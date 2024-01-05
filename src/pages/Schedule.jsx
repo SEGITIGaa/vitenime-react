@@ -15,7 +15,7 @@ const Schedule = () => {
   }, []);
   async function getJadwal() {
     const response = await axios.get(
-      "https://animepi.glitch.me/jadwal"
+      "https://web-anime-psi.vercel.app/jadwal"
     );
     setJadwal(response.data);
   }

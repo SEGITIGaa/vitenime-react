@@ -14,12 +14,12 @@ const EpisodeDetails = () => {
   }, [episodeSlug]);
 
   async function getNonce() {
-    const response = await axios.get("https://animepi.glitch.me/nonce");
+    const response = await axios.get("https://web-anime-psi.vercel.app/nonce");
     setNonce(response.data);
   }
 
   async function getEpisode() {
-    const response = await axios.get(`https://animepi.glitch.me/episode/${episodeSlug}`);
+    const response = await axios.get(`https://web-anime-psi.vercel.app/episode/${episodeSlug}`);
     setEpisode(response.data);
     setIframe(response.data.iframe);
   }
@@ -40,7 +40,7 @@ const EpisodeDetails = () => {
             </div>
             <div onClick={() => HandleShowedEpisode()} className="text-dark font-semibold flex items-center justify-between bg-semidark-tosca rounded px-4 py-2 md:hidden">
               {showEpisode === true ?'sembunyikan episode lainnya':'lihat episode lainnya'}
-              <img src="/Expand.svg" alt="" className={showEpisode === true ?'w-5 h-5 -rotate-180':'w-5 h-5'}/>
+              <img src="https://img.icons8.com/fluency-systems-filled/96/2c3333/expand-arrow.png" alt="" className={showEpisode === true ?'w-5 h-5 -rotate-180':'w-5 h-5'}/>
             </div>
             {showEpisode === true && (
                 <Episodes className="relative h-max" />

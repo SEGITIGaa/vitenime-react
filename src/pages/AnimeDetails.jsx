@@ -22,7 +22,7 @@ const AnimeDetails = () => {
 
   async function getAnime() {
     const response = await axios.get(
-      `https://animepi.glitch.me/anime/${animeSlug}`
+      `https://web-anime-psi.vercel.app/anime/${animeSlug}`
     );
     setAnime(response.data);
   }

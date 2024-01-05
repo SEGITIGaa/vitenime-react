@@ -3,11 +3,11 @@ import { Link, React, Sidebar } from "../exporter";
 const Navbar = ({ setRequest, getAnimes }) => {
   const menu = [
     {
-      icon: "/Sorting.svg",
+      icon: "https://img.icons8.com/fluency-systems-regular/100/ffffff/mail-filter.png",
       path: "/genre",
     },
     {
-      icon: "/Calendar.svg",
+      icon: "https://img.icons8.com/fluency-systems-regular/100/ffffff/month-view--v1.png",
       path: "/schedule",
     },
   ];
@@ -32,7 +32,7 @@ const Navbar = ({ setRequest, getAnimes }) => {
           />
         </form>
         <div className="flex w-full justify-between md:w-max gap-2 order-1 md:order-2">
-          <img src="/vitenime.svg" alt="" className="md:hidden w-1/3" />
+          <img src="/Assets/vitenime.png" alt="" className="md:hidden w-1/3" />
           <div className="flex items-center gap-2">
             {menu.map((ele, i) => (
               <Link

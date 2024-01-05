@@ -7,7 +7,7 @@ import {
   Loader,
 } from "../exporter";
 
-const API_URL = "https://animepi.glitch.me";
+const API_URL = "https://web-anime-psi.vercel.app";
 
 const Batch = () => {
   const [lengkap, setLengkap] = useState([]);

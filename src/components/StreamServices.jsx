@@ -2,7 +2,7 @@ import {axios} from "../exporter"
 
 const StreamServices = ({episode, nonce, setIframe}) => {
     async function getIframe (content) {
-        const response = await axios.get(`https://animepi.glitch.me/getIframe?nonce=${nonce}&content=${content}`)
+        const response = await axios.get(`https://web-anime-psi.vercel.app/getIframe?nonce=${nonce}&content=${content}`)
         const inframeSrc =  (new DOMParser().parseFromString(response.data,"text/html")).querySelector("iframe").getAttribute("src");
         setIframe(inframeSrc);
     }
