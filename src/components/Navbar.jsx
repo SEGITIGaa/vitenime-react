@@ -31,8 +31,8 @@ const Navbar = ({ setRequest, getAnimes }) => {
             className="bg-dark rounded px-4 py-3 md:py-2 placeholder w-full outline-none text-light-tosca text-sm"
           />
         </form>
-        <div className="flex w-full justify-between md:w-max gap-2 order-1 md:order-2">
-          <img src="/Assets/vitenime.png" alt="" className="md:hidden w-1/3" />
+        <div className="flex w-full items-center justify-between md:w-max gap-2 order-1 md:order-2">
+          <img src="/Assets/vitenime.png" alt="" className="md:hidden w-1/3 h-max" />
           <div className="flex items-center gap-2">
             {menu.map((ele, i) => (
               <Link

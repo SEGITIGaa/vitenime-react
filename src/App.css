@@ -39,7 +39,7 @@
     @apply px-1 py-2 flex gap-2 justify-between;
   }
   .icon-button {
-    @apply flex items-center justify-start md:justify-center rounded-lg md:rounded-xl w-full md:w-12 h-14 md:h-12 p-2 gap-1 bg-semidark-tosca md:bg-light-tosca;
+    @apply flex items-center justify-start md:justify-center rounded-lg md:rounded-xl w-full md:w-12 h-12 md:h-12 p-2 gap-1 bg-semidark-tosca md:bg-light-tosca;
   }
   .icon {
     @apply h-8 md:h-10 w-8 md:w-10;
